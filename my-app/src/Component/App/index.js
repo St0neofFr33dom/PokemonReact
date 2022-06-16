@@ -1,25 +1,39 @@
-import logo from './logo.svg';
+import {useState} from "react"
 import './App.css';
 
 function App() {
+
+  const [pokemonData,setPokemonData] = useState()
+
+ async function handleClick(){
+    let promise = await fetch("https://pokeapi.co/api/v2/pokemon/eevee");
+    let response = await promise.json()
+    setPokemonData(response)
+    console.log(pokemonData)
+  }
+
+  if (!pokemonData){
+    return(<body className="App">
+      <header>Pokemon React Website</header>
+      <main>
+        <img src="https://purepng.com/public/uploads/medium/purepng.com-pokeballpokeballdevicepokemon-ballpokemon-capture-ball-1701527825731v7bl3.png" alt="Who's that Pokemon?"/>
+        <button onClick={handleClick}>Get Pokemon</button>
+      </main>
+    </body>
+    )
+  }
+  else{
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <body className="App">
+      <header>Pokemon React Website</header>
+      <main>
+        <h1>{pokemonData.name}</h1>
+        <img src={pokemonData.sprites.other.dream_world.front_default} alt={pokemonData.name} onError="src=https://purepng.com/public/uploads/medium/purepng.com-pokeballpokeballdevicepokemon-ballpokemon-capture-ball-1701527825731v7bl3.png"/>
+        <button onClick={handleClick}>Get Pokemon</button>
+      </main>
+    </body>
   );
+}
 }
 
 export default App;
