@@ -1,0 +1,20 @@
+{
+  "name": "pokemonreact",
+  "version": "1.0.0",
+  "description": "Will start with the default beginner project of making a pokemon presenter",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/St0neofFr33dom/PokemonReact.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/St0neofFr33dom/PokemonReact/issues"
+  },
+  "homepage": "https://github.com/St0neofFr33dom/PokemonReact#readme"
+}
