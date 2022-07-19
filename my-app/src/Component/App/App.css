@@ -5,6 +5,14 @@
   height:auto;
 }
 
+.app{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 50vw;
+  margin: auto;
+}
+
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
